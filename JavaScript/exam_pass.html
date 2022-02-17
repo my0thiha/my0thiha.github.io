@@ -28,17 +28,17 @@
             console.log(js);
             let css=document.myForm.css.value;
             console.log(css);
-            if(html>80 && 80>js && js >=50  && 80 >css && css >= 50){
+            if(html>80 ){
                 document.write('<h1>This Student is pass HTML with distinction</h1>')
-            }else if(80 >html && html>= 50 && js > 80 && 80>css && css>=50){
+            }else if(js > 80 ){
                 document.write('<h1>This Student is pass JavaScript with distinction</h1>')
-            }else if(80>html && html>= 50 && 80>js && js >= 50 && css > 80){
+            }else if(css > 80){
                 document.write('<h1>This Student is pass CSS with distinction</h1>')
-            }else if(html > 80 && js > 80 && 80>css && css>=50){
+            }else if(html > 80 && js > 80 ){
                 document.write('<h1>This Student is pass HTML & JavaScript with distinction</h1>')
-            }else if(80>html && html >= 50 && js > 80 && css > 80){
+            }else if(js > 80 && css > 80){
                 document.write('<h1>This Student is pass JavaScript & CSS with distinction</h1>')
-            }else if(html > 80 && 80>js && js >= 50 && css > 80){
+            }else if(html > 80 && css > 80){
                 document.write('<h1>This Student is pass HTML & CSS with distinction</h1>')
             }else if(html > 80 && js > 80 && css > 80){
                 document.write('<h1>This Student is pass all subjects with distinction</h1>')
