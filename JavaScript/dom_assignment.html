@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table id="table" border="1" cellspacing="0" cellpadding="15">
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Name</th>
+                <th>Age</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+
+        </tbody>
+    </table>
+    <br>
+        <label for="username">Name:</label>
+        <input type="text" name="name" id="username" placeholder="Enter your Name">
+        <br><br>
+        <label for="userage">Age:&ensp;</label>
+        <input type="number" name="age" id="userage" placeholder="Enter your Age">
+        <br><br>
+        <button onclick="showData()">Show</button>
+    <script>
+        function showData(){
+            let uname=document.querySelector("#username").value;
+            console.log(uname);
+            let uage=document.querySelector("#userage").value;
+            console.log(uage);
+            let td1=document.createElement("td");
+            let td2=document.createElement("td");
+            let td3=document.createElement("td");
+            let row=document.createElement("tr");
+            let i =1;
+
+            td1.innerHTML = i++;
+            td2.innerHTML = document.getElementById("username").value;
+            td3.innerHTML = document.getElementById("userage").value;
+
+            row.appendChild(td1);
+            row.appendChild(td2);
+            row.appendChild(td3);
+            
+            table.appendChild(row);
+        }
+        
+    </script>
+
+</body>
+</html>
