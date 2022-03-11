@@ -148,6 +148,21 @@ a:visited{
 }
 
 /* float */
+
+.floatleft img{
+    width: 40%;
+    float:left;
+}
+
+.clear{
+    clear:both;
+}
+
+.floatright img{
+    width:40%;
+    float:right;
+}
+
 /* grid */
 .gridone div, .gridtwo div, .gridthree div, .gridfour div, .gridfive div, .gridsix div{
     padding: 20px;
@@ -235,3 +250,4 @@ a:visited{
 .offline{
     font-family: font1;
 }
+
