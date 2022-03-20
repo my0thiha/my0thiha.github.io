@@ -91,8 +91,9 @@
     width: 100px;
     margin: 0px 610px;
     border: 1px solid #0e6b9c;
+    margin-bottom: 50px;
 }
-.list{
+/* .list{
     margin-left: 70px;
 }
 .list div{
@@ -103,6 +104,7 @@
     display: grid;
     padding: 10px;
     margin-left: 10px;
+    grid-row-gap: 40px;
 }
 
 .list div span{
@@ -127,4 +129,391 @@
 .discount{
     color: red;
     text-decoration: line-through;
+} */
+.grid{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 40px;
+    margin-left: 50px;
+    margin-right: 50px;
+    text-align: center;
+}
+
+.product_image{
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 10px 20px rgb(0,0,0);
+    margin-bottom: 20px;
+}
+
+.red{
+    color: red;
+}
+
+.about{
+    background-image: url(../Images/Image20220314210751.jpg);
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    margin-top: 80px;
+    color: white;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-size: 1500px;
+    height: 250px;
+}
+
+.divide{
+    width: 40px;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.about div{
+    margin-top: 70px;
+}
+
+.packaging{
+    margin-top: 80px;
+    margin-left: 90px;
+}
+
+.packaging img{
+    float: left;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.packaging div{
+    position: relative;
+    left: 50px;
+    width: 90%;
+    text-align: justify;
+}
+.packaging_header{
+    margin-top: 20px;
+}
+
+.clear{
+    clear: both;
+}
+
+.support{
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    padding: 30px 0px 30px 40px;
+    background-color: #e2e7e9;
+}
+
+.support_icon{
+    float: left;
+    margin-right: 30px;
+}
+
+.footer{
+    background-color: #212529;
+}
+
+.footer_nav{
+    text-decoration: none;
+    display: inline-block;
+    color: gray;
+    padding-top: 40px;
+    margin-right: 40px;
+}
+
+.designed{
+    color: gray;
+    margin-top: 20px;
+}
+
+.footer_icon{
+    display: inline-block;
+    margin-top: 20px;
+    margin-right: 20px;
+    color: gray;
+    padding-bottom: 40px;
+}
+
+.shopgrid{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    margin-top: 60px;
+    margin-left: 110px;
+    padding: 20px;
+    width: 80%;
+    height:20px;
+    font-weight: bold;
+    color: azure;
+    background-color: #d2badc;
+    font-size: 18px;
+}
+
+.shopgrid a{
+    text-decoration: none;
+    padding-left: 20px;
+}
+
+.opacity{
+    margin-left: 110px;
+    float:left;
+    border: 1px solid #be7dda;
+    width: 833px;
+    height: 500px;
+}
+
+.promo{
+    display: block;
+    width: 400px;
+    height: 249px;
+    margin-right: 120px;
+    border: 1px solid #be7dda;
+
+    
+}
+
+
+
+.shoptag{
+    margin-left: 30px;
+    margin-top: 130px;
+    text-align: center;
+}
+.hot{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    margin-left: 30px;
+    margin-top: 70px;
+    text-align: center;
+}
+
+.shop_image{
+    border-radius: 5px;
+    box-shadow: 0 5px 5px 0;
+    margin-bottom: 20px;
+    width: 269px;
+    height:331px;
+}
+
+.shop_image:hover{
+    transform: scale(1.3);
+    transition: 0.5s;
+}
+
+.shopline{
+    width: 100px;
+    margin: 0px 715px;
+    border: 1px solid #d2badc;
+    margin-bottom: 60px ;
+    margin-top: 10px;
+}
+
+.popular{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+@font-face {
+    font-family: dancing;
+    src: url(../DancingScript-VariableFont_wght.ttf);
+}
+
+.special{
+  background-image: url(../Images/special1.jpg);
+  width: 100%;
+  height: 370px;
+  text-align: center;
+  font-family: dancing;
+  opacity: 80%;
+  background-repeat: no-repeat;
+  background-size: 1500px;
+  font-size: 40px;
+  margin-top: 100px;
+}
+ .special div{
+     padding-top: 150px;
+ }
+
+ .custom{
+     padding-top: 50px;
+     text-align: center;
+    
+ }
+
+ .customline{
+    width: 100px;
+    margin: 0px 700px;
+    border: 1px solid #d2badc;
+    margin-top: 10px;
+    margin-bottom: 30px;
+ }
+
+
+ #name,#email{
+     width: 400px;
+     height: 40px;
+     color: gray;
+     border-radius: 5px;
+ }
+
+ #flower,#color{
+     width: 400px;
+     height: 40px;
+     margin-top: 20px;
+     border-radius: 5px;
+ }
+
+ .customback center .inputshop input{
+     font-size: 18px;
+     padding-left: 20px;
+ }
+.textarea{
+    padding-top: 10px;
+    padding-left: 10px;
+    font-family: Georgia, Times, 'Times New Roman', serif;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+::placeholder{
+    font-size: 18px;
+}
+
+.submit{
+    padding: 10px;
+    border-radius: 20px;
+    background-color: #ce8ceb;
+    outline: none;
+    font-size: 20px;
+    margin-left: 1000px;
+}
+
+.customback{
+    background-color: rgb(209, 207, 207);
+}
+
+.aboutshop{
+    width: 40%;
+    margin-top: 50px;
+    text-align: left;
+    margin-left: 75px;
+    margin-top: 200px;
+    float: left;
+
+}
+
+.aboutshop h1,.promise h1{
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: dancing;
+}
+
+.about_image{
+    padding-top: 50px;
+    padding-left: 100px;
+    width: 550px;
+    height: 450px;
+}
+
+.promise{
+    padding-left: 100px;
+    margin-top: 220px;
+    width: 40%;
+    display: inline-block;
+    height: 450px;
+}
+.promise_image{
+    float: left;
+    margin-top: 120px;
+    margin-left: 100px;
+    width:  520px ;
+    height: 430px;
+}
+
+.cusreview{
+    text-align: center;
+}
+
+.reviewline{
+    margin-top: 20px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.reviewgrid{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto ;
+    margin-top: 50px;
+    width: 80%;
+    margin-left: 150px;
+    grid-column-gap: 100px;
+    grid-row-gap: 50px;
+}
+
+.reviewgrid div p{
+    padding-top: 20px;
+}
+
+.contact{
+    padding-top: 100px;
+    padding-bottom: 100px;
+    text-align: center;
+    background-image: url(../Images/aboutproj1.jpg);
+    width:100%;
+    font-family: dancing;
+    font-size: 25px;
+    color: rgb(155, 248, 197);
+    margin-bottom: 80px;
+}
+
+.shopicon{
+    margin-left: 150px;
+}
+
+.location{
+    float: left;
+    margin-right: 250px;
+}
+
+.location h2{
+    margin-top: 20px;
+    margin-left: 150px;
+}
+
+.address{
+    margin-top: 20px;
+    padding-left: 150px;
+}
+
+/* .cusform{
+    width:50%;
+} */
+#cusname,#cusemail,#subject{
+    width: 400px;
+    height: 40px;
+    margin-top: 20px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    padding-left: 20px;
+}
+
+
+#message{
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.contactform .cusform input{
+    font-size: 18px;
+}
+
+.contactform .cusform textarea{
+    padding-left: 20px;
+    padding-top: 10px;
+    font-size: 20px;
+    font-family: Georgia, Times, 'Times New Roman', serif;
 }
