@@ -7,7 +7,8 @@ int main(){
     cout<<"Enter item quantity: ";
     cin>>quantity;
 
-    if(price>5000){
+    int total = price * quantity;
+    if(total>5000){
         int disc;
         disc=price-(price*0.1);
         cout<<"Total Expenses: ";
