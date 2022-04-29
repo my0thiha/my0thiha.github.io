@@ -8,10 +8,10 @@ int main(){
     cin>>quantity;
 
     int total = price * quantity;
-    if(total>5000){
+    if(total>=5000){
         int disc;
-        disc=price-(price*0.1);
-        cout<<"Total Expenses: ";
+        disc=total-(total*0.1);
+        cout<<"Total Expenses: "<<disc;
     }
     else{
         cout<<"Total Expenses: "<<price*quantity;
