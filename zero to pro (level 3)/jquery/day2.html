@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+    </head>
+    <body>
+        <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat labore mollitia ducimus maxime culpa consequatur. Officia, libero? Perspiciatis asperiores, natus, ad cupiditate quod praesentium, dolorem laboriosam ipsum pariatur odio optio.
+        </p>
+        <p class="mname">this is second p tag</p>
+        <p class="mname" >this is 3rd p tag</p>
+        <button id="mybtn">Click me</button>
+        <ul>
+            <li>first year</li>
+            <li>second year</li>
+            <li>third year</li>
+        </ul>
+        <section id="contents">
+            <ul class="people">
+                <li>Mg Mg</li>
+                <li>Su Su</li>
+                <li>Hla Hla</li>
+            </ul>
+        </section>
+
+        <input type="text" name="first_name" id="name">
+
+        <button type="button">submit</button>
+        <br><br>
+        <table border="1" cellspacing="0" cellpadding="15">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Position</th>
+                    <th>Office</th>
+                    <th>Age</th>
+                    <th>Starting Date</th>
+                    <th>Salary</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Mg Mg</td>
+                    <td>Web developer</td>
+                    <td>Monywa</td>
+                    <td>32</td>
+                    <td>3.4.2016</td>
+                    <td>700000</td>
+                </tr>
+                <tr>
+                    <td>Ma Ma</td>
+                    <td>HR</td>
+                    <td>Yangon</td>
+                    <td>30</td>
+                    <td>3.5.2018</td>
+                    <td>650000</td>
+                </tr>
+                <tr>
+                    <td>Hla Hla</td>
+                    <td>Designer</td>
+                    <td>Mandalay</td>
+                    <td>34</td>
+                    <td>5.1.2013</td>
+                    <td>900000</td>
+                </tr>
+            </tbody>
+        </table>
+        <form>
+            <label for=""></label>
+        </form>
+
+        <script src="jquery.min.js"></script>
+        <script>
+            $(function(){
+                //Element selector
+                var p = $("p")  
+                console.log(p);
+
+                //class selector
+                var c = $(".mname")
+                console.log(c);
+
+                //id selector
+                var d = $("#mybtn")
+                console.log(d);
+
+                //with Element & Class
+                var ec = $("h2.mname")
+                console.log(ec);
+
+                //first li of first ul
+                var f = $("ul li:first")
+                console.log(f);
+
+                //parent child selector
+                var pc= $("#contents ul.people li")
+                console.log(pc);
+
+                var name=$("input[name='first_name']")
+                console.log(name);
+
+                var button = $(":button")
+                console.log(button);
+
+                var tr = $("tr:odd")
+                console.log(tr);
+            })
+        </script>
+    </body>
+</html>

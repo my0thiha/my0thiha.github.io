@@ -8,7 +8,19 @@
 </head>
 <body>
     <script>
+        let sec_no = 5;
+        let guess_no = prompt("Guess The Number!");
         
+        while (guess_no != sec_no){
+            if (guess_no > sec_no){
+                alert("Higher, Try Again!")
+            }
+            else {
+                alert("Lower, Try Again!")
+            }
+            guess_no =  prompt("Guess The Number!");
+        }
+        alert("Correct!!")
     </script>
 </body>
 </html>
