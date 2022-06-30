@@ -4,9 +4,59 @@
         <title></title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="css/style.css" rel="stylesheet">
+        
     </head>
     <body>
-    
+        <button class="mybtn">click me</button>
+        <p class="myp">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta quidem tempora cupiditate amet est ad corrupti, delectus, expedita nihil id esse. Amet, consequatur repellendus. Magni ab beatae numquam excepturi quidem.
+        </p>
+        <form action="">
+            <input type="text" name="username">
+            <br><br>
+            <input type="number" name="age">
+            <br><br>
+            <input type="submit" value="save">
+        </form>
+        <!-- Scripts -->
+        <script src="jquery.min.js"></script>
+        <script>
+            $(function(){
+                $(".myp").on("click",function(){
+                    alert("Clicked the paragraph")
+                    console.log($(this));
+            })
+            //with callback
+             $("button").click(function(){
+                $("p").hide("slow",function(){
+                    alert("The paragraph is now hidden")
+                });
+            });   
+            //without callback
+            $("button").click(function(){
+                $("p").hide(1000);
+                    alert("The paragraph is now hidden")
+                });
+            //form submit
+            $("form").on("submit",function(e){
+                var username = $("input[name='username']").val()
+                var age = $("input[name='age']").val()
+
+                console.log(username);
+                console.log(age)
+
+                var err= false
+                if(username.length <5){
+                    err=true
+                }
+                if(age<18){
+                    err=true
+                }
+                if(err){
+                    e.preventDefault();
+                }
+            })
+        });
+        </script>
     </body>
 </html>

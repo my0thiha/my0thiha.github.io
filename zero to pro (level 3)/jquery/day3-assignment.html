@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+    <form action="">
+        <br>
+        <div>
+            <input type="text" name="" id="name" placeholder="Enter Your Name" style="width:200px; height:30px; padding-left: 20px;">
+        </div>
+        <br>
+        <div>
+            <input type="number" name="" id="age" placeholder="Enter Your Age"
+            style="width:200px; height:30px;padding-left: 20px;">
+        </div>
+        <br>
+        <div>
+            <input type="radio" name="rs" id="single" value="single">
+            <label for="single">Single</label>
+            <input type="radio" name="rs" id="married" value="married">
+            <label for="married">Married</label>
+        </div>
+        <br>
+        <div>
+            <input type="text" placeholder="Enter Your Spouse Name" id="spouse" 
+            style="display: none;width:200px; height:30px;" >
+        </div>
+        <br>
+        <button type="button" style="background-color: red; color:white; width: 80px; height: 30px;" >Save</button>
+    </form>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function(){
+            $("#spouse").hide();
+        })
+        $(function(){
+            $("#single").click(function(){
+                $("#spouse").hide("1000")
+            });
+        });
+        $(function(){
+            $("#married").click(function(){
+                $("#spouse").show("1000")
+            });
+        });
+    </script>
+    </body>
+</html>
