@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <form action="">
+            <label for="name">Enter name</label>
+            <input type="text" name="name" id="name"><br><br>
+
+            <label for="category">Choose Category</label>
+            <select name="category" id="category">
+                <option value="">Choose Category</option>
+                <option value="1">Fashion</option>
+                <option value="2">Furniture</option>
+                <option value="3">Electronic</option>
+                <option value="4">Food</option>
+            </select><br><br>
+            <label for="discount">Discount %:</label>
+            <input type="number" name="discount" id="discount">
+
+            <input type="submit" value="save">
+            </form>
+        <script src="jquery.min.js"></script>
+        <script>
+            $(function(){
+                $("select[name='category']").on("change",function(){
+                    var selected = $(this).val();
+                    //alert (selected)
+                    if(selected == 1){
+                        discount=15
+                    }else if (selected==2){
+                        discount=20
+                    }else if (selected== 3){
+                        discount =10
+                    }else if (selected==4){
+                        discount=10
+                    }
+                    $("input[name='discount']").val(discount)
+                })
+                $("form").on("submit",function(event){
+                    event.preventDefault();
+                    var name = $("input[name='name']").val()
+                    var category = $("select[name='category']").val()
+
+                    console.log(`${name},${category}`)
+                })
+            })
+        </script>
+    </body>
+</html>

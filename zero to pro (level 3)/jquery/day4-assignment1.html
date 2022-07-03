@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Day4-assignment1</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            #name{
+                margin-top: 200px;
+                margin-left: 568px;
+                width: 250px;
+                height: 40px;
+                padding-left: 10px;
+                border-color: rgb(136, 43, 222);
+            }
+            ::placeholder{
+                color: blueviolet;
+            }
+            p{
+                margin-left: 570px;
+                color: blueviolet;
+            }
+            .position{
+                margin-left: 570px;
+                color: blueviolet;
+            }
+            .button{
+                margin-left: 570px;
+                width: 70px;
+                height: 30px;
+                background-color: aqua;
+                border-color: white;
+                color: blueviolet;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <form action="">
+            <input type="text" name="name" id="name" placeholder="Name">
+            <br>
+            <p>Hobbies</p>
+            <div class="position">
+                <input type="checkbox" name="hobby" id="reading" value="Reading">
+                <label for="reading" >Reading</label>
+                <input type="checkbox" name="hobby" id="guitar" value="Playing Guitar">
+                <label for="guitar">Playing Guitar</label>
+                <input type="checkbox" name="hobby" id="game" value="Game">
+                <label for="game">Game</label>
+            </div>
+            <br>
+            <button type="submit" class="button">Save</button>
+        </form>
+        <script src="jquery.min.js"></script>
+        <script>
+            $(function(){
+                $("form").on("submit",function(e){
+                    e.preventDefault();
+                    var name = $("input[name=name]").val();
+                    var reading = $("#reading:checked").val();
+                    var guitar = $("#guitar:checked").val();
+                    var game = $("#game:checked").val();
+                    console.log(name);
+                    console.log(reading);
+                    console.log(guitar);
+                    console.log(game);
+                    var data='';
+                    if(reading){
+                        data +=`${reading} `;
+                    }
+                    if(guitar){
+                        data+=`${guitar}`;
+                    }
+                    if(game){
+                        data+=` and ${game}`;
+                    }
+                    data = `My name is ${name} and My hobbies are ${data}`;
+                alert(data);
+                })
+            })
+        </script>
+    </body>
+</html>
