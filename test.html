@@ -5,11 +5,30 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="style.css" rel="stylesheet">
+    <style>
+      h1{
+        text-align: center;
+        left: 100px;
+        background:red;
+        margin-left: 400px;
+        margin-right:400px;
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     </head>
     <body>
-        <nav>
-            <a href="zero to pro (level 3)/jquery/day1.html" class="test">Day3&emsp14;&emsp14;</a>
-        </nav>
-        <button class="button">Add to Cart</button>
+        <button id="normal alert">Normal alert</button>
+        <button id="sweetalert">Sweetalert</button>
+        <script src="zero to pro (level 3)/jquery/jquery.min.js"></script>
+        <script>
+            $(function(){
+              $("#normal_alert").on("click",function(){
+                alert("Normal Alert")
+              })
+              $("#sweetalert").on("click",function(){
+                Swal.fire("I m a sweetalert")
+              })
+            })
+        </script>
     </body>
 </html>

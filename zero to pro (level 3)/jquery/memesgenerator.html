@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <style>
+            body{
+                background-color: rgba(11, 11, 11, 0.914);
+                
+            }
+            #memes{
+                display: grid;
+                grid-auto-flow: column;
+                overflow-x: scroll;
+                width: 98%;
+                padding-right: 20px;
+            }
+            .bg{
+                position:fixed;
+                left: 200px;
+                top: 25px;
+                background: black;
+                right: 200px;
+            }
+            
+            .images{
+                width: auto;
+                height: 100px;
+                padding:3px 3px 3px 0;
+                background-color: black;
+            }
+            .edit{
+                width: 400px;
+                height: 400px;
+                padding: 10px 30px 30px 10px;
+                float: left;
+            }
+            .default{
+                width: 400px;
+                height: 400px;
+                padding: 10px 30px 30px 10px;
+                float: left;
+            }
+            .meme_name{
+                margin-top: 25px;
+                color: khaki;
+                text-align: center;
+            }
+            
+            .text_edit{
+                margin-top: 20px;
+                margin-left: 150px;
+                height: 30px;
+                width: 200px;
+                padding-left: 30px;
+                font-size: 15px;
+                border-radius: 10px;
+            }
+            .generate{
+                margin: 30px 0px 0px 223px;
+                height: 40px;
+                width: 90px;
+                border-radius: 10px;
+            }
+            .generate:hover{
+                background-color: darkslategray;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="bg">
+            <div id="memes"></div>
+            <div class="edit">
+                <img class="default" src="https://i.imgflip.com/30b1gx.jpg" alt="Drake Hotline Bling">
+            </div>
+            <div>
+                <h2 class="meme_name">Drake Hotline Bling</h2>
+                <div class="text_temp">
+                <input type="text" class="text_edit" name="text0" placeholder="Insert Text0 here"><br>
+                <input type="text" class="text_edit" name="text1" placeholder="Insert Text1 here">
+                <br>
+            </div>
+                <button type="button" class="generate">Generate</button>
+                
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="jquery.min.js"></script>
+        <script>
+            $(function(){
+                $.get("https://api.imgflip.com/get_memes",function(resp){
+                        var memes = resp.data.memes;
+                        var data = ''
+                    for (const row of memes) {
+                        data += `<img class="images" src="${row.url}" alt="${row.name}" data-box="${row.box_count}" data-id="${row.id}" data-name="${row.name}">`
+                    }
+                    $("#memes").html(data)
+
+                    $(".images").on("click",function(){
+                        var id = $(this).data("id");
+                        var name = $(this).data("name");
+                        var box = $(this).data("box");
+                        var url = $(this).attr("src");
+
+                        var data = `<img class="default" src="${url}" data-box="${box}" data-id="${id}" data-name="${name}">`;
+                        //console.log(data);
+                        $(".edit").html(data);
+                        $(".meme_name").html(name)
+
+                        var text ='';
+                        for(var i=0; i<box; i++){
+                                text += `<input type="text" id="text${i}" class="text_edit" placeholder="Insert text${i} here"<br>`
+                            }
+                        $(".text_temp").html(text);
+                        $(".generate").on("click",function(){
+                            var box = $(".default").data("box");
+                            var id = $(".default").data("id");
+                            //console.log(box);
+                            var userinput=[];
+                            for(var i = 0; i<box;i++){
+                                userinput[i] = {text: $(`#text${i}`).val()};
+                            }
+                            console.log(userinput);
+                           $.post("https://api.imgflip.com/caption_image",{
+                                template_id: id,
+                                username: "thetpainghtut",
+                                password: "Apple!@#",
+                                boxes:userinput,
+                            }, function (resp) {
+                                //console.log(resp)
+                                Swal.fire({
+                                    title: name,
+                                    text: "Download?",
+                                    imageUrl:`${resp.data.url}`,
+                                    imageWidth: 400,
+                                    imageAlt: 'Custom image',
+                                })
+                            })
+                        });
+                    });
+                });    
+            });
+        </script>
+    </body>
+</html>

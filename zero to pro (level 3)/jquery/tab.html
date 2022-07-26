@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tab</title>
+  <style>
+    ul.link-wapper{
+      list-style: none;
+      text-align: center;
+    }
+
+    ul.link-wapper li{
+      display: inline-block;
+      padding: 10px;
+    }
+
+    ul.link-wapper li a{
+      text-decoration: none;
+      color: black;
+      padding: 10px;
+    }
+
+    ul.link-wapper li a.active{
+        color: #0037ff;
+        border-bottom: 1px solid red;
+    }
+
+    .content{
+      max-width: 800px;
+      background-color:rgba(0, 0, 0, 0.187);
+      padding: 20px;
+      margin: 0 auto;
+      display: none;
+    }
+
+    /* for shop */
+    .grid{
+        display: grid;
+        display: inline;
+        text-align: center;
+        padding-left: 25px;  
+    }
+    .img1{
+      display: inline-block;
+       padding-left: 20px; 
+    }
+    .atcbtn{
+      border: 1px solid black;
+      color: black;
+      background-color: rgb(38, 232, 24);
+      width: 100px;
+      height: 30px;
+      border-radius: 10px;
+    }
+    .atcbtn:hover{
+        cursor: pointer;
+        background-color: blueviolet;
+    }
+  </style>
+
+  <script src="jquery.min.js"></script>
+  <script>
+    $(function (param) { 
+      $('.content').first().slideDown();
+
+      $('ul.link-wapper li a').on("click",function (event) { 
+          var current_tab = $(this);
+          $('ul.link-wapper li a').removeClass('active');
+          current_tab.addClass('active');
+
+          $('.content').slideUp();
+          current_tab_href = current_tab.attr('href'); // #about
+          $(current_tab_href).slideDown(); // $('#about')
+
+          event.preventDefault();
+      })
+    })
+  </script>
+  <script src="cart.js"></script>
+</head>
+<body>
+  <div class="tab">
+    <!-- Nav -->
+    <ul class="link-wapper">
+      <li>
+        <a href="#home" class="active">Home</a>
+      </li>
+      <li>
+        <a href="#about">About</a>
+      </li>
+      <li>
+        <a href="#shop">Shop</a>
+      </li>
+      <li>
+        <a href="#cart">Cart</a>
+      </li>
+    </ul>
+
+    <!-- Content -->
+    <div class="content" id="home">
+      <h2>Home Tab</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, fuga neque autem est fugit placeat mollitia sit ducimus. Quidem voluptatum blanditiis porro excepturi eaque atque ad at officia illo eligendi!</p>
+    </div>
+
+    <div class="content" id="about">
+      <h2>About Tab</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, fuga neque autem est fugit placeat mollitia sit ducimus. Quidem voluptatum blanditiis porro excepturi eaque atque ad at officia illo eligendi!</p>
+    </div>
+
+    <div class="content" id="shop">
+      <h2 style="text-align: center;">My Products</h2>
+    
+        <div style="text-align: center;" class="grid">
+            <div class="img1">
+                <img src="images/img1.jpg" alt="" height="180px" width="200px">
+                <b><p>Item_One</p></b>
+                <button class="atcbtn" data-id="1" data-name="Item_One" data-price="1500">Add to Cart</button>
+            </div>
+            <div class="img1">
+                <img src="images/img2.jpg" alt="" height="180px">
+                <b><p>Item_Two</p></b>
+                <button class="atcbtn"data-id="2" data-name="Item_Two" data-price="2500">Add to Cart</button>
+            </div>
+            <div class="img1">
+                <img src="images/img3.jpg" alt="" height="180px" width="250px">
+                <b><p>Item Item_Three</p></b>
+                <button class="atcbtn" data-id="3" data-name="Item_Three" data-price="3500">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+    <div class="content" id="cart">
+        <div class="mycart">
+        </div>
+          <center>
+            <table border="1" cellpadding="15" cellspacing="0" class="mytable" width="100%" style="text-align:center;">
+              <thead>
+                <tr>
+                  <th>No</th>
+                  <th>Name</th>
+                  <th>Qty</th>
+                  <th>Price</th>
+                </tr>
+              </thead>
+              <tbody id="cartitems">
+                
+              </tbody>
+            </table>
+          </center>
+      
+    </div>
+  </div>
+</body>
+</html>
+
+<!-- // 1 - a => active class remove 
+// 2 - current a => add class active 
+// ------ hide all content
+// 3 - get href attr value of current a
+// 4 - show related content - current attr href  -->

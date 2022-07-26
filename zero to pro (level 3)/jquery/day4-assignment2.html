@@ -4,7 +4,6 @@
         <title>Day4-assignment2</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="../style.css">
         <style>
             .grid{
                 display: grid;
@@ -37,18 +36,21 @@
             <div class="img1">
                 <img src="images/img1.jpg" alt="" height="180px">
                 <b><p>Razer Blade GeForce RTX 3080-Black</p></b>
-                <button class="button">Add to Cart</button>
+                <button class="button" data-id="1" data-name="item_one" data-price="1500">Add to Cart</button>
             </div>
             <div class="img1">
                 <img src="images/img2.jpg" alt="" height="180px">
                 <b><p>Razer Viper 8k</p></b>
-                <button class="button">Add to Cart</button>
+                <button class="button"data-id="2" data-name="item_two" data-price="2500">Add to Cart</button>
             </div>
             <div class="img1">
-                <img src="images/img3.jpg" alt="" height="180px">
+                <img src="images/img3.jpg" alt="" height="180px" >
                 <b><p>Razer Huntsman v2</p></b>
-                <button class="button">Add to Cart</button>
+                <button class="button" data-id="3" data-name="item_three" data-price="3500">Add to Cart</button>
             </div>
         </div>
+        <!-- script -->
+        <script src="jquery.min.js"></script>
+        <script src="cart.js"></script>
     </body>
 </html>
