@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="main.js"></script>
+    <style>
+        #app{
+            border: 1px solid white;
+            margin-left: 400px;
+            margin-right: 400px;
+            margin-top: 90px;
+            padding-left: 30px;
+            background-image: linear-gradient(to right,skyblue,rgb(238, 159, 238))
+        }
+        h2{
+            text-align: center;
+        }
+        ::placeholder{
+            text-align: right;
+        }
+        .boxtwo{
+            margin-left: 25px;
+        }
+        input{
+            margin-left: 15px;
+            height: 25px;
+            border: none;
+            border-radius: 5px;
+        }
+        button{
+            margin-left: 200px;
+            width: 100px;
+            height: 40px;
+            border: none;
+            border-radius: 15px;
+        }
+        button:hover{
+            background-color: rgba(163, 88, 238, 0.776);
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h2>{{title}}</h2>
+        <br>
+        <label for="height">Your Height:</label>
+        <input type="number" name="height" v-model.number="ft" placeholder="ft">
+        <input type="number" name="" v-model.number="inch" placeholder="inch/inches" class="boxtwo">
+        <br><br>
+        <br><br>
+        <label for="weight">Your Weight:</label>
+        <input type="number" name="weight" v-model.number="weight" placeholder="lbs">
+        <br><br>
+        <br>
+            <button @click="calculate">Calculate</button>
+
+        <br><br>
+        <strong>
+            <p>BMI Categories</p>
+            <ul>
+                <li>Underweight = less than 18.5 </li>
+                <li>Normal weight = 18.5~24.9 </li>
+                <li>Overweight = 25~29.9 </li>
+                <li>Obesity = BMI of 30 or greater </li>
+            </ul>
+            <div>
+                <h2 v-if="solution != 0 && solution<18.5" style="text-align:center;color: rgba(0, 0, 255, 0.566);">You are Underweight</h2>
+                <h2 v-else-if="solution >=18.5 && solution <= 24.9" style="text-align:center;color: green;">You are Normal weight</h2>
+                <h2 v-else-if="solution>=25 && solution <= 29.9" style="text-align:center; color: orangered;">You are Overweight</h2>
+                <h2 v-else-if="solution >= 30" style="text-align:center;color: red;">You are Obesity</h2>
+            </div>
+        </strong>
+    </div>
+
+    <script>
+        const mountedApp = app2.mount("#app");
+    </script>
+    
+</body>
+</html>

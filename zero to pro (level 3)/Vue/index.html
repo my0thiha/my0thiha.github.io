@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="main.js"></script>
+
+        <div id="app">
+            <!-- Raw Html -->
+            <span v-html="message"></span>
+
+            <!-- Text Interpolation -->
+            <p>My name is {{ name }}. I am {{age}} years old.</p>
+
+            <!-- Attribute Bind -->
+            <!-- <img v-bind:src="" alt=""> -->
+            <img :src="photo" alt="">
+
+            <!-- If else Condition -->
+            <p v-if="seen">Now you see me</p>
+
+            <!-- List Rendering -->
+            <div v-if="colors.length>0">
+                <ul>
+                    <li v-for="item in colors">{{item}}</li>
+                </ul>
+            </div>
+            <div v-else>
+                <p>No Any Other Color Array Here!</p>
+            </div>
+
+            <ol>
+                <li v-for="(item,index) in students">
+                    <strong>{{index}}. </strong>{{item.name}}-{{item.age}}-{{item.gender}}
+                </li>
+            </ol>
+            <!-- Event -->
+            <p>Count is :{{count}}</p>
+            <!-- <button v-on:click="count++">Add 1</button> -->
+            <button @click="count++">Add 1</button>
+            <button @click="openalert('Ha Ha')">openbox</button>
+            <!-- Input binding -->
+            <input type="text" name="username" v-model="username">
+            <p>Message is {{test}}</p>
+            <input type="text" name="test" v-model="test">
+        </div>
+        <script>
+            const mountedApp = app.mount("#app");
+        </script>
+</body>
+</html>
