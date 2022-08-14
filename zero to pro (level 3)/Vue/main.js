@@ -1,28 +1,28 @@
-// const app = Vue.createApp({
-//     data() {
-//         return {
-//             message: '<h3 style="color:red;">Hello Vue</h3>',
-//             name: 'Mg Mg',
-//             age: 26,
-//             photo: "product6.jpg",
-//             seen: true,
-//             colors: ['red','green','blue'],
-//             students:[
-//                 {name:'Mg Mg',age:22, gender:'male'},
-//                 {name: 'Su Su',age:23, gender:'female'},
-//                 {name: 'Bo Bo',age:20, gender: 'male'},
-//             ],
-//             count: 1,
-//             username: '',
-//             test:'',
-//         }
-//     },
-//     methods:{
-//         openalert(msg){
-//             alert(msg)
-//         }
-//     }
-// });
+const app = Vue.createApp({
+    data() {
+        return {
+            message: '<h3 style="color:red;">Hello Vue</h3>',
+            name: 'Mg Mg',
+            age: 26,
+            photo: "product6.jpg",
+            seen: true,
+            colors: ['red','green','blue'],
+            students:[
+                {name:'Mg Mg',age:22, gender:'male'},
+                {name: 'Su Su',age:23, gender:'female'},
+                {name: 'Bo Bo',age:20, gender: 'male'},
+            ],
+            count: 1,
+            username: '',
+            test:'',
+        }
+    },
+    methods:{
+        openalert(msg){
+            alert(msg)
+        }
+    }
+});
 
 const app2 = Vue.createApp({
     data(){
@@ -43,4 +43,24 @@ const app2 = Vue.createApp({
         }
     }
     
+});
+
+const app3 = Vue.createApp({
+    data(){
+        return{
+            age: Number,
+            isButtonDisabled: true,
+            isInputDisabled:true,
+        }
+    },
+    methods:{
+        mybtn(){
+            if(this.age >=18){
+                this.isInputDisabled = false
+            }
+        },
+        validate(){
+            console.log("form validation here");
+        }
+    }
 })

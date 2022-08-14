@@ -66,9 +66,9 @@
                 <li>Overweight = 25~29.9 </li>
                 <li>Obesity = BMI of 30 or greater </li>
             </ul>
-            <p style="text-align: center; font-size: 14px;">BMI: {{solution.toFixed(1)}}</p>
+            <p style="text-align: center; font-size: 14px;"v-if="solution>0">BMI: {{solution.toFixed(1)}}</p>
             <div>
-                <h2 v-if="solution != 0 && solution<18.5" style="text-align:center;color: rgba(0, 0, 255, 0.566);">You are Underweight</h2>
+                <h2 v-if="solution > 0 && solution<18.5" style="text-align:center;color: rgba(0, 0, 255, 0.566);">You are Underweight</h2>
                 <h2 v-else-if="solution >=18.5 && solution <= 24.9" style="text-align:center;color: green;">You are Normal weight</h2>
                 <h2 v-else-if="solution>=25 && solution <= 29.9" style="text-align:center; color: orangered;">You are Overweight</h2>
                 <h2 v-else-if="solution >= 30" style="text-align:center;color: red;">You are Obesity</h2>
